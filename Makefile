@@ -9,19 +9,19 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openwrt-ssr
-PKG_VERSION:=1.2.1
+PKG_VERSION:=1.2.2
 #PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://github.com/ywb94/shadowsocks-libev
-PKG_SOURCE_VERSION:=11db1d5e48f539855ea1a66947eba9bb9bc82150
+PKG_SOURCE_URL:=https://github.com/breakwa11/shadowsocks-libev.git
+PKG_SOURCE_VERSION:=f713aa981169d35ff9483b295d1209c35117d70c
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 
 PKG_LICENSE:=GPLv3
 PKG_LICENSE_FILES:=LICENSE
-PKG_MAINTAINER:=yushi studio <ywb94@qq.com>
+PKG_MAINTAINER:=breakwa11
 
 #PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_VERSION)
@@ -149,10 +149,10 @@ define Package/openwrt-ssr/install
 	$(INSTALL_BIN) ./files/root/etc/uci-defaults/luci-$(2) $(1)/etc/uci-defaults/luci-$(2)
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-redir $(1)/usr/bin/ssr-redir
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-tunnel $(1)/usr/bin/ssr-tunnel
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-local $(1)/usr/bin/ssr-tunnel
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-local $(1)/usr/bin/ssr-local	
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-server $(1)/usr/bin/ssr-server		
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-check $(1)/usr/bin/ssr-check
+	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-server $(1)/usr/bin/ssr-server		
+	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-check $(1)/usr/bin/ssr-check
 	$(INSTALL_BIN) ./files/shadowsocksr.rule $(1)/usr/bin/ssr-rules
 	$(INSTALL_BIN) ./files/shadowsocksr.monitor $(1)/usr/bin/ssr-monitor
 	$(INSTALL_BIN) ./files/shadowsocksr.switch $(1)/usr/bin/ssr-switch
@@ -227,10 +227,10 @@ define Package/luci-app-shadowsocksR-GFW/install
 	$(INSTALL_BIN) ./files/root/etc/uci-defaults/luci-shadowsocksr $(1)/etc/uci-defaults/luci-shadowsocksr
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-redir $(1)/usr/bin/ssr-redir
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-tunnel $(1)/usr/bin/ssr-tunnel
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-local $(1)/usr/bin/ssr-tunnel
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-local $(1)/usr/bin/ssr-local	
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-server $(1)/usr/bin/ssr-server		
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-check $(1)/usr/bin/ssr-check
+	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-server $(1)/usr/bin/ssr-server		
+	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/ss-check $(1)/usr/bin/ssr-check
 	$(INSTALL_BIN) ./files/shadowsocksr.rule $(1)/usr/bin/ssr-rules
 	$(INSTALL_BIN) ./files/shadowsocksr.monitor $(1)/usr/bin/ssr-monitor
 	$(INSTALL_BIN) ./files/shadowsocksr.gfw $(1)/usr/bin/ssr-gfw

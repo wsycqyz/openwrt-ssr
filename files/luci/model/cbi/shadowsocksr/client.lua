@@ -25,6 +25,7 @@ m = Map(shadowsocksr, translate("ShadowSocksR Client"))
 local server_table = {}
 local arp_table = luci.sys.net.arptable() or {}
 local encrypt_methods = {
+	"none",
 	"table",
 	"rc4",
 	"rc4-md5",
@@ -58,6 +59,7 @@ local protocol = {
 	"auth_sha1_v4",
 	"auth_aes128_sha1",
 	"auth_aes128_md5",
+	"auth_chain_a",
 }
 
 obfs = {
