@@ -63,6 +63,8 @@ local protocol = {
 	"auth_chain_b",
 	"auth_chain_c",
 	"auth_chain_d",
+	"auth_chain_e",
+	"auth_chain_f",
 }
 
 obfs = {
