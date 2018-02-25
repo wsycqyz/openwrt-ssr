@@ -9,12 +9,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openwrt-ssr
-PKG_VERSION:=1.2.5
+PKG_VERSION:=1.2.7
 #PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/shadowsocksrr/shadowsocksr-libev.git
-PKG_SOURCE_VERSION:=d4904568c0bd7e0861c0cbfeaa43740f404db214
+PKG_SOURCE_VERSION:=bc1bbecc49ab5a9afb4ab7076f0d9359dc0493d1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
