@@ -7,7 +7,7 @@ ShadowsocksR-libev for OpenWrt
 
  本项目是 [shadowsocksr-libev][1] 在 OpenWrt 上的移植  
  
- 各平台预编译IPK请在本项目releases页面下载
+ 早期版本的各平台预编译IPK请在本项目releases页面下载
 
 特性
 ---
